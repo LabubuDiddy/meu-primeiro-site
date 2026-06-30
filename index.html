@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Site</title>
+    <title>Meu Super Portfólio 🚀</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,140 +13,305 @@
         }
 
         body {
-            background-color: #f4f6f9;
-            color: #333333;
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
         .container {
-            max-width: 650px;
+            max-width: 750px;
             width: 100%;
-            background: #ffffff;
+        }
+
+        /* Cartão de Perfil */
+        .profile-card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #334155;
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
             text-align: center;
-        }
-
-        .header-badge {
-            background-color: #e8dbff;
-            color: #6c5ce7;
-            padding: 6px 16px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            color: #2d3436;
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #636e72;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             margin-bottom: 30px;
         }
 
-        /* Área de Likes */
-        .like-section {
-            background: #fafafa;
-            border: 1px solid #eaeaea;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
+        .avatar {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
         }
 
-        .like-section h3 {
-            color: #2d3436;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+        h1 {
+            font-size: 2.4rem;
+            background: linear-gradient(to right, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
-        .like-btn {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: white;
-            border: none;
-            padding: 14px 35px;
+        .subtitle {
+            color: #94a3b8;
             font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* Links Sociais */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
-            transition: all 0.2s ease;
-            display: inline-flex;
+            font-size: 0.9rem;
+            border: 1px solid #334155;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            background: #334155;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Seções de Conteúdo */
+        .section-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .like-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        /* Grid de Habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
         }
 
-        .like-btn:active {
-            transform: translateY(1px);
+        .skill-tag {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #cbd5e1;
+            border: 1px solid #334155;
         }
 
-        .counter-container {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #2d3436;
+        /* Sistema de Likes Superior */
+        .like-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #4c1d95, #1e1b4b);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid #6d28d9;
         }
 
-        .counter {
-            font-weight: 700;
-            color: #6c5ce7;
-            font-size: 1.5rem;
+        .like-btn {
+            background: #ec4899;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+            transition: transform 0.1s;
+        }
+
+        .like-btn:active { transform: scale(0.95); }
+
+        /* Sistema de Comentários */
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        input, textarea {
+            background: #0f172a;
+            border: 1px solid #334155;
+            padding: 14px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #8b5cf6;
+        }
+
+        .submit-btn {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .comment-item {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #f472b6;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #a78bfa;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .comment-text {
+            color: #cbd5e1;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <span class="header-badge">PROJETO INICIAL</span>
-    <h1>Meu Primeiro Site Oficial 🚀</h1>
-    <p>
-        Bem-vindo à minha estreia no desenvolvimento web! Este projeto foi feito para 
-        praticar a criação de interfaces modernas, organizadas e interativas. Usei HTML5 para estruturar, 
-        CSS3 para deixar o visual incrível e JavaScript para dar vida à página.
-    </p>
 
-    <div class="like-section">
-        <h3>O que achou do visual? Deixe seu apoio!</h3>
-        <button class="like-btn" id="btn-like">
-            ❤️ Curtir Projeto
-        </button>
-        <div class="counter-container">
-            Total de curtidas: <span class="counter" id="total-likes">0</span>
+    <div class="profile-card">
+        <div class="avatar">👨‍💻</div>
+        <h1>Meu Espaço Digital</h1>
+        <p class="subtitle">Estudante de tecnologia transformando linhas de código em realidade.</p>
+        <div class="social-links">
+            <a href="#" class="social-btn">🔗 GitHub</a>
+            <a href="#" class="social-btn">📸 Instagram</a>
         </div>
     </div>
+
+    <div class="like-bar">
+        <span>Gostou do projeto? Deixe seu incentivo!</span>
+        <div>
+            <button class="like-btn" id="btn-like">❤️ <span id="count-likes">0</span></button>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>🛠️ O que estou aprendendo</h2>
+        <div class="skills-grid">
+            <div class="skill-tag" style="border-color: #e34c26">HTML5</div>
+            <div class="skill-tag" style="border-color: #264de4">CSS3</div>
+            <div class="skill-tag" style="border-color: #f0db4f">JavaScript</div>
+            <div class="skill-tag" style="border-color: #61dbfb">GitHub</div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>💬 Deixe um recado</h2>
+        
+        <div class="comment-form">
+            <input type="text" id="input-name" placeholder="Seu nome" required>
+            <textarea id="input-text" rows="3" placeholder="Escreva uma mensagem..." required></textarea>
+            <button class="submit-btn" id="btn-comment">Enviar Comentário</button>
+        </div>
+
+        <div class="comments-list" id="comments-box">
+            </div>
+    </div>
+
 </div>
 
 <script>
-    // Lógica do Sistema de Likes
-    const botaoLike = document.getElementById('btn-like');
-    const displayContador = document.getElementById('total-likes');
+    // ELEMENTOS - LIKES
+    const btnLike = document.getElementById('btn-like');
+    const countLikes = document.getElementById('count-likes');
+    let totalLikes = parseInt(localStorage.getItem('superLikes')) || 0;
+    countLikes.innerText = totalLikes;
 
-    // Recupera os likes salvos ou inicia com 0 se for a primeira vez
-    let totalLikes = parseInt(localStorage.getItem('contadorLikes')) || 0;
-    displayContador.innerText = totalLikes;
-
-    botaoLike.addEventListener('click', () => {
+    btnLike.addEventListener('click', () => {
         totalLikes++;
-        displayContador.innerText = totalLikes;
-        
-        // Salva de forma permanente no navegador do usuário
-        localStorage.setItem('contadorLikes', totalLikes);
+        countLikes.innerText = totalLikes;
+        localStorage.setItem('superLikes', totalLikes);
     });
+
+    // ELEMENTOS - COMENTÁRIOS
+    const btnComment = document.getElementById('btn-comment');
+    const inputName = document.getElementById('input-name');
+    const inputText = document.getElementById('input-text');
+    const commentsBox = document.getElementById('comments-box');
+
+    // Carrega comentários antigos já gravados
+    let listaComentarios = JSON.parse(localStorage.getItem('superComments')) || [];
+
+    function renderizarComentarios() {
+        commentsBox.innerHTML = '';
+        if(listaComentarios.length === 0) {
+            commentsBox.innerHTML = '<p style="color: #64748b; font-size: 0.9rem;">Nenhum comentário ainda. Seja o primeiro!</p>';
+            return;
+        }
+        listaComentarios.forEach(c => {
+            const item = document.createElement('div');
+            item.className = 'comment-item';
+            item.innerHTML = `<div class="comment-author">${c.nome}</div><div class="comment-text">${c.texto}</div>`;
+            commentsBox.appendChild(item);
+        });
+    }
+
+    btnComment.addEventListener('click', () => {
+        const nome = inputName.value.trim();
+        const texto = inputText.value.trim();
+
+        if(nome === '' || texto === '') {
+            alert('Por favor, preencha todos os campos!');
+            return;
+        }
+
+        // Adiciona o novo comentário na lista
+        listaComentarios.unshift({ nome, texto });
+        localStorage.setItem('superComments', JSON.stringify(listaComentarios));
+
+        // Limpa os campos e atualiza a tela
+        inputName.value = '';
+        inputText.value = '';
+        renderizarComentarios();
+    });
+
+    // Inicializa a exibição ao carregar a página
+    renderizarComentarios();
 </script>
 
 </body>
