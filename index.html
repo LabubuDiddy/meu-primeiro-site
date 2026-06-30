@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .header-badge {
+            background-color: #e8dbff;
+            color: #6c5ce7;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #2d3436;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #636e72;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Área de Likes */
+        .like-section {
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .like-section h3 {
+            color: #2d3436;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .like-btn {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .like-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        .like-btn:active {
+            transform: translateY(1px);
+        }
+
+        .counter-container {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #2d3436;
+        }
+
+        .counter {
+            font-weight: 700;
+            color: #6c5ce7;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span class="header-badge">PROJETO INICIAL</span>
+    <h1>Meu Primeiro Site Oficial 🚀</h1>
+    <p>
+        Bem-vindo à minha estreia no desenvolvimento web! Este projeto foi feito para 
+        praticar a criação de interfaces modernas, organizadas e interativas. Usei HTML5 para estruturar, 
+        CSS3 para deixar o visual incrível e JavaScript para dar vida à página.
+    </p>
+
+    <div class="like-section">
+        <h3>O que achou do visual? Deixe seu apoio!</h3>
+        <button class="like-btn" id="btn-like">
+            ❤️ Curtir Projeto
+        </button>
+        <div class="counter-container">
+            Total de curtidas: <span class="counter" id="total-likes">0</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Lógica do Sistema de Likes
+    const botaoLike = document.getElementById('btn-like');
+    const displayContador = document.getElementById('total-likes');
+
+    // Recupera os likes salvos ou inicia com 0 se for a primeira vez
+    let totalLikes = parseInt(localStorage.getItem('contadorLikes')) || 0;
+    displayContador.innerText = totalLikes;
+
+    botaoLike.addEventListener('click', () => {
+        totalLikes++;
+        displayContador.innerText = totalLikes;
+        
+        // Salva de forma permanente no navegador do usuário
+        localStorage.setItem('contadorLikes', totalLikes);
+    });
+</script>
+
+</body>
+</html>
