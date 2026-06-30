@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Super Portfólio 🚀</title>
+    <title>Meu Super Portfólio & Blog 🚀</title>
     <style>
         * {
             box-sizing: border-box;
@@ -106,6 +106,35 @@
             gap: 10px;
         }
 
+        /* Estilos do Artigo do Blog */
+        article h2 {
+            font-size: 1.5rem;
+            color: #a78bfa;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        article strong {
+            color: #f472b6;
+            background: rgba(244, 114, 182, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .artigo-fonte {
+            font-size: 0.85rem !important;
+            color: #64748b !important;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
         /* Grid de Habilidades */
         .skills-grid {
             display: grid;
@@ -123,7 +152,7 @@
             border: 1px solid #334155;
         }
 
-        /* Sistema de Likes Superior */
+        /* Barra de Likes */
         .like-bar {
             display: flex;
             align-items: center;
@@ -224,10 +253,35 @@
     </div>
 
     <div class="like-bar">
-        <span>Gostou do projeto? Deixe seu incentivo!</span>
+        <span>Gostou do espaço? Deixe seu incentivo!</span>
         <div>
             <button class="like-btn" id="btn-like">❤️ <span id="count-likes">0</span></button>
         </div>
+    </div>
+
+    <div class="section-box">
+        <article>
+            <h2>Como a Inteligência Artificial está Mudando o Desenvolvimento Web<br>O futuro do código já começou</h2>
+            
+            <p>
+                O mercado de tecnologia está passando por uma transformação radical com a chegada de novos assistentes de código. 
+                Programadores de todo o mundo estão mudando a forma como constroem sites e aplicativos no dia a dia.
+            </p>
+
+            <p>
+                A grande chave para essa revolução é o uso de <strong>modelos de linguagem em grande escala</strong>, que conseguem 
+                interpretar o contexto do que o desenvolvedor precisa e gerar linhas inteiras de HTML, CSS e JavaScript em segundos, 
+                reduzindo drasticamente o tempo de desenvolvimento de projetos simples.
+            </p>
+
+            <p>
+                Apesar de toda essa automação, a criatividade humana e o entendimento da experiência do usuário continuam sendo os 
+                pilares mais importantes para criar um site de sucesso. Saber como comandar essas ferramentas passou a ser uma nova 
+                habilidade essencial.
+            </p>
+
+            <p class="artigo-fonte">Fonte: TechCrunch e Alura News</p>
+        </article>
     </div>
 
     <div class="section-box">
@@ -256,7 +310,7 @@
 </div>
 
 <script>
-    // ELEMENTOS - LIKES
+    // LÓGICA DO BOTÃO DE LIKES
     const btnLike = document.getElementById('btn-like');
     const countLikes = document.getElementById('count-likes');
     let totalLikes = parseInt(localStorage.getItem('superLikes')) || 0;
@@ -268,13 +322,12 @@
         localStorage.setItem('superLikes', totalLikes);
     });
 
-    // ELEMENTOS - COMENTÁRIOS
+    // LÓGICA DOS COMENTÁRIOS
     const btnComment = document.getElementById('btn-comment');
     const inputName = document.getElementById('input-name');
     const inputText = document.getElementById('input-text');
     const commentsBox = document.getElementById('comments-box');
 
-    // Carrega comentários antigos já gravados
     let listaComentarios = JSON.parse(localStorage.getItem('superComments')) || [];
 
     function renderizarComentarios() {
@@ -300,17 +353,14 @@
             return;
         }
 
-        // Adiciona o novo comentário na lista
         listaComentarios.unshift({ nome, texto });
         localStorage.setItem('superComments', JSON.stringify(listaComentarios));
 
-        // Limpa os campos e atualiza a tela
         inputName.value = '';
         inputText.value = '';
         renderizarComentarios();
     });
 
-    // Inicializa a exibição ao carregar a página
     renderizarComentarios();
 </script>
 
